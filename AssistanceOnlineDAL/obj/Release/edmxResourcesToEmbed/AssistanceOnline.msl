@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AssistanceOnlineModelStoreContainer" CdmEntityContainer="AssistanceOnlineContext">
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="AssistanceOnlineModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="modificationDate" ColumnName="modificationDate" />
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

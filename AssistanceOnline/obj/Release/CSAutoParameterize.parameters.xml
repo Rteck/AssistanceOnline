@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="AssistanceOnlineContext-Web.config Connection String" description="AssistanceOnlineContext Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="metadata=res://*/AssistanceOnline.csdl|res://*/AssistanceOnline.ssdl|res://*/AssistanceOnline.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=184.168.194.62;initial catalog=AssistanceOnline;persist security info=True;user id=AssistanceOnlineUser;password=Gunq45@5;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Gerardo\ Monreal\\Documents\\Visual\ Studio\ 2017\\Projects\\AssistanceOnline\\AssistanceOnline\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AssistanceOnlineContext']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="DefaultConnection_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Gerardo\ Monreal\\Documents\\Visual\ Studio\ 2017\\Projects\\AssistanceOnline\\AssistanceOnline\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>
