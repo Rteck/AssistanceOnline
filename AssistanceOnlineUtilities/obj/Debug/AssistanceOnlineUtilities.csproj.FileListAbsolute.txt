@@ -34,3 +34,21 @@ C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineUtili
 C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineUtilities\obj\Debug\AssistanceOnlineUtilities.csprojResolveAssemblyReference.cache
 C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineUtilities\obj\Debug\AssistanceOnlineUtilities.dll
 C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineUtilities\obj\Debug\AssistanceOnlineUtilities.pdb
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\bin\Debug\AssistanceOnlineUtilities.dll.config
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\bin\Debug\AssistanceOnlineUtilities.dll
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\bin\Debug\AssistanceOnlineUtilities.pdb
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\bin\Debug\AssistanceOnlineBLL.dll
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\bin\Debug\AssistanceOnlineDAL.dll
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\bin\Debug\EntityFramework.dll
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\bin\Debug\Newtonsoft.Json.dll
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\bin\Debug\AssistanceOnlineBLL.pdb
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\bin\Debug\AssistanceOnlineBLL.dll.config
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\bin\Debug\AssistanceOnlineDAL.pdb
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\bin\Debug\AssistanceOnlineDAL.dll.config
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\bin\Debug\EntityFramework.xml
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\bin\Debug\Newtonsoft.Json.xml
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\obj\Debug\AssistanceOnlineUtilities.csprojResolveAssemblyReference.cache
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\obj\Debug\AssistanceOnlineUtilities.dll
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineUtilities\obj\Debug\AssistanceOnlineUtilities.pdb

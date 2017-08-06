@@ -9,12 +9,21 @@ namespace AssistanceOnlineBLL
 {
     public static class UserBLL
     {
-        public static void AddUser(User user)
+        public static bool AddUser(User user)
         {
+            
             using (var context = new AssistanceOnlineContext())
             {
-                context.User.Add(user);
-                context.SaveChanges();
+                if (context.User.Where(c => c.email == user.email).Any())
+                {
+                    return false;
+                }
+                else
+                {
+                    context.User.Add(user);
+                    context.SaveChanges();
+                    return true;
+                }
             }
         }
     }

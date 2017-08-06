@@ -24,3 +24,16 @@ C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineBLL\b
 C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineBLL\obj\Debug\AssistanceOnlineBLL.csprojResolveAssemblyReference.cache
 C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineBLL\obj\Debug\AssistanceOnlineBLL.dll
 C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineBLL\obj\Debug\AssistanceOnlineBLL.pdb
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineBLL\bin\Debug\AssistanceOnlineBLL.dll.config
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineBLL\bin\Debug\AssistanceOnlineBLL.dll
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineBLL\bin\Debug\AssistanceOnlineBLL.pdb
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineBLL\bin\Debug\AssistanceOnlineDAL.dll
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineBLL\bin\Debug\EntityFramework.dll
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineBLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineBLL\bin\Debug\AssistanceOnlineDAL.pdb
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineBLL\bin\Debug\AssistanceOnlineDAL.dll.config
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineBLL\bin\Debug\EntityFramework.xml
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineBLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineBLL\obj\Debug\AssistanceOnlineBLL.csprojResolveAssemblyReference.cache
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineBLL\obj\Debug\AssistanceOnlineBLL.dll
+C:\Users\halos\Documents\AssistanceOnline\AssistanceOnline\AssistanceOnlineBLL\obj\Debug\AssistanceOnlineBLL.pdb

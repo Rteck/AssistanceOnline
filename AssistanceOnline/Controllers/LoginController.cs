@@ -42,7 +42,7 @@ namespace AssistanceOnline.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult createAcount([Bind(Include = "idUser,name,lastName,email,password")] User user)
+        public ActionResult createAccount([Bind(Include = "idUser,name,lastName,email,password")] User user)
         {
             var response = Request["g-recaptcha-response"];
 
@@ -52,11 +52,16 @@ namespace AssistanceOnline.Controllers
                 user.modificationDate   =   DateTime.UtcNow;
                 user.active             =   false;
 
-                UserBLL.AddUser(user);
+                if (UserBLL.AddUser(user))
+                {
+                    Utilities.sendEmailVerification(user);
 
-                Utilities.sendEmailVerification(user);
-
-                return View("Index");
+                    return View("Index");
+                }
+                else
+                {
+                    return View();
+                }
             }
             return View();        
         }
