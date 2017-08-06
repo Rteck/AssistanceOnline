@@ -18,7 +18,7 @@ namespace AssistanceOnlineBLL
         {
             using (AssistanceOnlineContext context = new AssistanceOnlineContext())
             {
-                return context.Key.Where(c => c.description == description).FirstOrDefault();
+                return context.Key.Where(c => c.description == description && c.active == true).FirstOrDefault();
             }
         }
     }

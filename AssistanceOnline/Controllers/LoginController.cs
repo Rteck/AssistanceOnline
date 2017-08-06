@@ -8,6 +8,7 @@ using System.Net;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using AssistanceOnlineUtilities;
+using AssistanceOnlineDAL;
 
 namespace AssistanceOnline.Controllers
 {
@@ -40,9 +41,24 @@ namespace AssistanceOnline.Controllers
         }
 
         [HttpPost]
-        public ActionResult createAcount()
+        [ValidateAntiForgeryToken]
+        public ActionResult createAcount([Bind(Include = "idUser,name,lastName,email,password")] User user)
         {
-            return View("Index");
+            var response = Request["g-recaptcha-response"];
+
+            if (Utilities.verifyReCapchat(response))
+            {
+                user.creationDate       =   DateTime.UtcNow;
+                user.modificationDate   =   DateTime.UtcNow;
+                user.active             =   false;
+
+                UserBLL.AddUser(user);
+
+                Utilities.sendEmailVerification(user);
+
+                return View("Index");
+            }
+            return View();        
         }
 
         public ActionResult forgotPassword()
