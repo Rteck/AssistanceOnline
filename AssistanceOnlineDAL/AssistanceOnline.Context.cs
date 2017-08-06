@@ -26,5 +26,6 @@ namespace AssistanceOnlineDAL
         }
     
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Key> Key { get; set; }
     }
 }

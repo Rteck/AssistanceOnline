@@ -15,5 +15,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Key">
+      <EntityTypeMapping TypeName="AssistanceOnlineModel.Key">
+        <MappingFragment StoreEntitySet="Key">
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="modification" ColumnName="modification" />
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="idKey" ColumnName="idKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

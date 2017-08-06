@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="9a1acdca83a54af3b4f7b72ce5355f07" Name="Diagram1">
         <EntityTypeShape EntityType="AssistanceOnlineModel.User" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AssistanceOnlineModel.Key" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssistanceOnlineDAL", "Assi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssistanceOnlineBLL", "AssistanceOnlineBLL\AssistanceOnlineBLL.csproj", "{0AA893C2-DB9E-4DA5-B344-6D221A76A178}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssistanceOnlineUtilities", "AssistanceOnlineUtilities\AssistanceOnlineUtilities.csproj", "{A3B9C214-3B81-4E2A-93B3-E88104645E51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0AA893C2-DB9E-4DA5-B344-6D221A76A178}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AA893C2-DB9E-4DA5-B344-6D221A76A178}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AA893C2-DB9E-4DA5-B344-6D221A76A178}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3B9C214-3B81-4E2A-93B3-E88104645E51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B9C214-3B81-4E2A-93B3-E88104645E51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3B9C214-3B81-4E2A-93B3-E88104645E51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3B9C214-3B81-4E2A-93B3-E88104645E51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

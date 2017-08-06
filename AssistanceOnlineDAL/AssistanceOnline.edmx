@@ -5,6 +5,18 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="AssistanceOnlineModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Key">
+          <Key>
+            <PropertyRef Name="idKey" />
+          </Key>
+          <Property Name="idKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="value" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="type" Type="int" Nullable="false" />
+          <Property Name="creationDate" Type="datetime" Nullable="false" />
+          <Property Name="modification" Type="datetime" Nullable="false" />
+          <Property Name="active" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="idUser" />
@@ -19,6 +31,7 @@
           <Property Name="modificationDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityContainer Name="AssistanceOnlineModelStoreContainer">
+          <EntitySet Name="Key" EntityType="Self.Key" Schema="AssistanceOnlineUser" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="AssistanceOnlineUser" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -27,6 +40,7 @@
       <Schema Namespace="AssistanceOnlineModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="AssistanceOnlineContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="User" EntityType="AssistanceOnlineModel.User" />
+          <EntitySet Name="Key" EntityType="AssistanceOnlineModel.Key" />
         </EntityContainer>
         <EntityType Name="User">
           <Key>
@@ -40,6 +54,18 @@
           <Property Name="active" Type="Boolean" Nullable="false" />
           <Property Name="creationDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modificationDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Key">
+          <Key>
+            <PropertyRef Name="idKey" />
+          </Key>
+          <Property Name="idKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="value" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="type" Type="Int32" Nullable="false" />
+          <Property Name="creationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modification" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="active" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -58,6 +84,19 @@
                 <ScalarProperty Name="lastName" ColumnName="lastName" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="idUser" ColumnName="idUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Key">
+            <EntityTypeMapping TypeName="AssistanceOnlineModel.Key">
+              <MappingFragment StoreEntitySet="Key">
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="modification" ColumnName="modification" />
+                <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="idKey" ColumnName="idKey" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

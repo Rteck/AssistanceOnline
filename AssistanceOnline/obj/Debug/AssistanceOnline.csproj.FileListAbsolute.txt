@@ -31,6 +31,7 @@ C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\Antlr3.Runtime.dll
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\AssistanceOnlineBLL.dll
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\AssistanceOnlineDAL.dll
+C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\AssistanceOnlineUtilities.dll
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\EntityFramework.dll
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\EntityFramework.SqlServer.dll
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\Microsoft.AI.Agent.Intercept.dll
@@ -68,9 +69,13 @@ C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\System.Web.WebPages.Razor.dll
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\WebGrease.dll
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\AssistanceOnlineBLL.pdb
+C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\AssistanceOnlineBLL.dll.config
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\AssistanceOnlineDAL.pdb
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\AssistanceOnlineDAL.dll.config
+C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\AssistanceOnlineUtilities.pdb
+C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\AssistanceOnlineUtilities.dll.config
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\Newtonsoft.Json.xml
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\System.Web.Helpers.xml
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\System.Web.Mvc.xml
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\System.Web.Optimization.xml
@@ -79,7 +84,6 @@ C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\System.Web.WebPages.Razor.xml
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\Antlr3.Runtime.pdb
-C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\Newtonsoft.Json.xml
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\System.Net.Http.Formatting.xml
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\System.Web.Http.xml
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnline\bin\System.Web.Http.WebHost.xml
