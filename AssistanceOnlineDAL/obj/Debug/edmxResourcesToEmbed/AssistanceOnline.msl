@@ -40,5 +40,56 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Assistance">
+      <EntityTypeMapping TypeName="AssistanceOnlineModel.Assistance">
+        <MappingFragment StoreEntitySet="Assistance">
+          <ScalarProperty Name="numberAssistance" ColumnName="numberAssistance" />
+          <ScalarProperty Name="token" ColumnName="token" />
+          <ScalarProperty Name="modificationDate" ColumnName="modificationDate" />
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="idCourse" ColumnName="idCourse" />
+          <ScalarProperty Name="idAssistance" ColumnName="idAssistance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="AssistanceOnlineModel.Courses">
+        <MappingFragment StoreEntitySet="Courses">
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="modificationDate" ColumnName="modificationDate" />
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+          <ScalarProperty Name="tokenKey" ColumnName="tokenKey" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="idCourse" ColumnName="idCourse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubscriptionAssistance">
+      <EntityTypeMapping TypeName="AssistanceOnlineModel.SubscriptionAssistance">
+        <MappingFragment StoreEntitySet="SubscriptionAssistance">
+          <ScalarProperty Name="modificationDate" ColumnName="modificationDate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+          <ScalarProperty Name="idSubscription" ColumnName="idSubscription" />
+          <ScalarProperty Name="idAssistance" ColumnName="idAssistance" />
+          <ScalarProperty Name="idSubscriptionAssistance" ColumnName="idSubscriptionAssistance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subscriptions">
+      <EntityTypeMapping TypeName="AssistanceOnlineModel.Subscriptions">
+        <MappingFragment StoreEntitySet="Subscriptions">
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="modificationDate" ColumnName="modificationDate" />
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="idCourse" ColumnName="idCourse" />
+          <ScalarProperty Name="idSubscription" ColumnName="idSubscription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

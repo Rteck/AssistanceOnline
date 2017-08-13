@@ -4,6 +4,34 @@
     <EntitySet Name="Key" EntityType="AssistanceOnlineModel.Key" />
     <EntitySet Name="HtmlTemplate" EntityType="AssistanceOnlineModel.HtmlTemplate" />
     <EntitySet Name="User" EntityType="AssistanceOnlineModel.User" />
+    <EntitySet Name="Assistance" EntityType="AssistanceOnlineModel.Assistance" />
+    <EntitySet Name="Courses" EntityType="AssistanceOnlineModel.Courses" />
+    <EntitySet Name="SubscriptionAssistance" EntityType="AssistanceOnlineModel.SubscriptionAssistance" />
+    <EntitySet Name="Subscriptions" EntityType="AssistanceOnlineModel.Subscriptions" />
+    <AssociationSet Name="FK_Assistance_Courses" Association="AssistanceOnlineModel.FK_Assistance_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="Assistance" EntitySet="Assistance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubscriptionA_Assistance" Association="AssistanceOnlineModel.FK_SubscriptionA_Assistance">
+      <End Role="Assistance" EntitySet="Assistance" />
+      <End Role="SubscriptionAssistance" EntitySet="SubscriptionAssistance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Courses_User" Association="AssistanceOnlineModel.FK_Courses_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subsciptions_Courses" Association="AssistanceOnlineModel.FK_Subsciptions_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="Subscriptions" EntitySet="Subscriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubscriptionA_Subscription" Association="AssistanceOnlineModel.FK_SubscriptionA_Subscription">
+      <End Role="Subscriptions" EntitySet="Subscriptions" />
+      <End Role="SubscriptionAssistance" EntitySet="SubscriptionAssistance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subscriptions_User" Association="AssistanceOnlineModel.FK_Subscriptions_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Subscriptions" EntitySet="Subscriptions" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Key">
     <Key>
@@ -40,5 +68,136 @@
     <Property Name="creationDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="modificationDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="keyToken" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Courses" Relationship="AssistanceOnlineModel.FK_Courses_User" FromRole="User" ToRole="Courses" />
+    <NavigationProperty Name="Subscriptions" Relationship="AssistanceOnlineModel.FK_Subscriptions_User" FromRole="User" ToRole="Subscriptions" />
   </EntityType>
+  <EntityType Name="Assistance">
+    <Key>
+      <PropertyRef Name="idAssistance" />
+    </Key>
+    <Property Name="idAssistance" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idCourse" Type="Int32" Nullable="false" />
+    <Property Name="active" Type="Boolean" Nullable="false" />
+    <Property Name="creationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modificationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="token" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="numberAssistance" Type="Int32" />
+    <NavigationProperty Name="Courses" Relationship="AssistanceOnlineModel.FK_Assistance_Courses" FromRole="Assistance" ToRole="Courses" />
+    <NavigationProperty Name="SubscriptionAssistance" Relationship="AssistanceOnlineModel.FK_SubscriptionA_Assistance" FromRole="Assistance" ToRole="SubscriptionAssistance" />
+  </EntityType>
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="idCourse" />
+    </Key>
+    <Property Name="idCourse" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="tokenKey" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="creationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modificationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="idUser" Type="Int32" Nullable="false" />
+    <Property Name="active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Assistance" Relationship="AssistanceOnlineModel.FK_Assistance_Courses" FromRole="Courses" ToRole="Assistance" />
+    <NavigationProperty Name="User" Relationship="AssistanceOnlineModel.FK_Courses_User" FromRole="Courses" ToRole="User" />
+    <NavigationProperty Name="Subscriptions" Relationship="AssistanceOnlineModel.FK_Subsciptions_Courses" FromRole="Courses" ToRole="Subscriptions" />
+  </EntityType>
+  <EntityType Name="SubscriptionAssistance">
+    <Key>
+      <PropertyRef Name="idSubscriptionAssistance" />
+    </Key>
+    <Property Name="idSubscriptionAssistance" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idAssistance" Type="Int32" Nullable="false" />
+    <Property Name="idSubscription" Type="Int32" Nullable="false" />
+    <Property Name="creationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="Boolean" Nullable="false" />
+    <Property Name="modificationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Assistance" Relationship="AssistanceOnlineModel.FK_SubscriptionA_Assistance" FromRole="SubscriptionAssistance" ToRole="Assistance" />
+    <NavigationProperty Name="Subscriptions" Relationship="AssistanceOnlineModel.FK_SubscriptionA_Subscription" FromRole="SubscriptionAssistance" ToRole="Subscriptions" />
+  </EntityType>
+  <EntityType Name="Subscriptions">
+    <Key>
+      <PropertyRef Name="idSubscription" />
+    </Key>
+    <Property Name="idSubscription" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idCourse" Type="Int32" Nullable="false" />
+    <Property Name="idUser" Type="Int32" Nullable="false" />
+    <Property Name="creationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modificationDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Courses" Relationship="AssistanceOnlineModel.FK_Subsciptions_Courses" FromRole="Subscriptions" ToRole="Courses" />
+    <NavigationProperty Name="SubscriptionAssistance" Relationship="AssistanceOnlineModel.FK_SubscriptionA_Subscription" FromRole="Subscriptions" ToRole="SubscriptionAssistance" />
+    <NavigationProperty Name="User" Relationship="AssistanceOnlineModel.FK_Subscriptions_User" FromRole="Subscriptions" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Assistance_Courses">
+    <End Type="AssistanceOnlineModel.Courses" Role="Courses" Multiplicity="1" />
+    <End Type="AssistanceOnlineModel.Assistance" Role="Assistance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="idCourse" />
+      </Principal>
+      <Dependent Role="Assistance">
+        <PropertyRef Name="idCourse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubscriptionA_Assistance">
+    <End Type="AssistanceOnlineModel.Assistance" Role="Assistance" Multiplicity="1" />
+    <End Type="AssistanceOnlineModel.SubscriptionAssistance" Role="SubscriptionAssistance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Assistance">
+        <PropertyRef Name="idAssistance" />
+      </Principal>
+      <Dependent Role="SubscriptionAssistance">
+        <PropertyRef Name="idAssistance" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Courses_User">
+    <End Type="AssistanceOnlineModel.User" Role="User" Multiplicity="1" />
+    <End Type="AssistanceOnlineModel.Courses" Role="Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subsciptions_Courses">
+    <End Type="AssistanceOnlineModel.Courses" Role="Courses" Multiplicity="1" />
+    <End Type="AssistanceOnlineModel.Subscriptions" Role="Subscriptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="idCourse" />
+      </Principal>
+      <Dependent Role="Subscriptions">
+        <PropertyRef Name="idCourse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubscriptionA_Subscription">
+    <End Type="AssistanceOnlineModel.Subscriptions" Role="Subscriptions" Multiplicity="1" />
+    <End Type="AssistanceOnlineModel.SubscriptionAssistance" Role="SubscriptionAssistance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subscriptions">
+        <PropertyRef Name="idSubscription" />
+      </Principal>
+      <Dependent Role="SubscriptionAssistance">
+        <PropertyRef Name="idSubscription" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subscriptions_User">
+    <End Type="AssistanceOnlineModel.User" Role="User" Multiplicity="1" />
+    <End Type="AssistanceOnlineModel.Subscriptions" Role="Subscriptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Subscriptions">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

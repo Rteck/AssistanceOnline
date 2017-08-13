@@ -1,5 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="AssistanceOnlineModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Assistance">
+    <Key>
+      <PropertyRef Name="idAssistance" />
+    </Key>
+    <Property Name="idAssistance" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idCourse" Type="int" Nullable="false" />
+    <Property Name="active" Type="bit" Nullable="false" />
+    <Property Name="creationDate" Type="datetime" Nullable="false" />
+    <Property Name="modificationDate" Type="datetime" Nullable="false" />
+    <Property Name="token" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="numberAssistance" Type="int" />
+  </EntityType>
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="idCourse" />
+    </Key>
+    <Property Name="idCourse" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="description" Type="text" Nullable="false" />
+    <Property Name="tokenKey" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="creationDate" Type="datetime" Nullable="false" />
+    <Property Name="modificationDate" Type="datetime" Nullable="false" />
+    <Property Name="idUser" Type="int" Nullable="false" />
+    <Property Name="active" Type="bit" Nullable="false" />
+  </EntityType>
   <EntityType Name="HtmlTemplate">
     <Key>
       <PropertyRef Name="idHtmlTemplate" />
@@ -22,6 +47,28 @@
     <Property Name="modification" Type="datetime" Nullable="false" />
     <Property Name="active" Type="bit" Nullable="false" />
   </EntityType>
+  <EntityType Name="SubscriptionAssistance">
+    <Key>
+      <PropertyRef Name="idSubscriptionAssistance" />
+    </Key>
+    <Property Name="idSubscriptionAssistance" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idAssistance" Type="int" Nullable="false" />
+    <Property Name="idSubscription" Type="int" Nullable="false" />
+    <Property Name="creationDate" Type="datetime" Nullable="false" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="modificationDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subscriptions">
+    <Key>
+      <PropertyRef Name="idSubscription" />
+    </Key>
+    <Property Name="idSubscription" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idCourse" Type="int" Nullable="false" />
+    <Property Name="idUser" Type="int" Nullable="false" />
+    <Property Name="creationDate" Type="datetime" Nullable="false" />
+    <Property Name="modificationDate" Type="datetime" Nullable="false" />
+    <Property Name="active" Type="bit" Nullable="false" />
+  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="idUser" />
@@ -36,9 +83,109 @@
     <Property Name="modificationDate" Type="datetime" Nullable="false" />
     <Property Name="keyToken" Type="varchar" MaxLength="1000" />
   </EntityType>
+  <Association Name="FK_Assistance_Courses">
+    <End Role="Courses" Type="Self.Courses" Multiplicity="1" />
+    <End Role="Assistance" Type="Self.Assistance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="idCourse" />
+      </Principal>
+      <Dependent Role="Assistance">
+        <PropertyRef Name="idCourse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Courses_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subsciptions_Courses">
+    <End Role="Courses" Type="Self.Courses" Multiplicity="1" />
+    <End Role="Subscriptions" Type="Self.Subscriptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="idCourse" />
+      </Principal>
+      <Dependent Role="Subscriptions">
+        <PropertyRef Name="idCourse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubscriptionA_Assistance">
+    <End Role="Assistance" Type="Self.Assistance" Multiplicity="1" />
+    <End Role="SubscriptionAssistance" Type="Self.SubscriptionAssistance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Assistance">
+        <PropertyRef Name="idAssistance" />
+      </Principal>
+      <Dependent Role="SubscriptionAssistance">
+        <PropertyRef Name="idAssistance" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubscriptionA_Subscription">
+    <End Role="Subscriptions" Type="Self.Subscriptions" Multiplicity="1" />
+    <End Role="SubscriptionAssistance" Type="Self.SubscriptionAssistance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subscriptions">
+        <PropertyRef Name="idSubscription" />
+      </Principal>
+      <Dependent Role="SubscriptionAssistance">
+        <PropertyRef Name="idSubscription" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subscriptions_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Subscriptions" Type="Self.Subscriptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Subscriptions">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="AssistanceOnlineModelStoreContainer">
+    <EntitySet Name="Assistance" EntityType="Self.Assistance" Schema="AssistanceOnlineUser" store:Type="Tables" />
+    <EntitySet Name="Courses" EntityType="Self.Courses" Schema="AssistanceOnlineUser" store:Type="Tables" />
     <EntitySet Name="HtmlTemplate" EntityType="Self.HtmlTemplate" Schema="AssistanceOnlineUser" store:Type="Tables" />
     <EntitySet Name="Key" EntityType="Self.Key" Schema="AssistanceOnlineUser" store:Type="Tables" />
+    <EntitySet Name="SubscriptionAssistance" EntityType="Self.SubscriptionAssistance" Schema="AssistanceOnlineUser" store:Type="Tables" />
+    <EntitySet Name="Subscriptions" EntityType="Self.Subscriptions" Schema="AssistanceOnlineUser" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="AssistanceOnlineUser" store:Type="Tables" />
+    <AssociationSet Name="FK_Assistance_Courses" Association="Self.FK_Assistance_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="Assistance" EntitySet="Assistance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Courses_User" Association="Self.FK_Courses_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subsciptions_Courses" Association="Self.FK_Subsciptions_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="Subscriptions" EntitySet="Subscriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubscriptionA_Assistance" Association="Self.FK_SubscriptionA_Assistance">
+      <End Role="Assistance" EntitySet="Assistance" />
+      <End Role="SubscriptionAssistance" EntitySet="SubscriptionAssistance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubscriptionA_Subscription" Association="Self.FK_SubscriptionA_Subscription">
+      <End Role="Subscriptions" EntitySet="Subscriptions" />
+      <End Role="SubscriptionAssistance" EntitySet="SubscriptionAssistance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subscriptions_User" Association="Self.FK_Subscriptions_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Subscriptions" EntitySet="Subscriptions" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>
