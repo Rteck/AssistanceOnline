@@ -9,6 +9,7 @@ using Newtonsoft.Json.Linq;
 using AssistanceOnlineBLL;
 using AssistanceOnlineDAL;
 using System.Net.Mail;
+using System.Text;
 
 namespace AssistanceOnlineUtilities
 {
@@ -34,11 +35,18 @@ namespace AssistanceOnlineUtilities
 
         public static bool sendEmailVerification(User user)
         {
+            
+            string urlApi = "http://localhost:56432/api/tokenVerify?tk=" + user.keyToken;
             string subject = "Account verification";
-            string body = "Hola";
+            string body = HtmlTemplateBLL.getHtmlTemplate(1).template.Replace("{NOMBRE}",user.name + " " + user.lastName)
+                                                                     .Replace("{CORREO}",user.email)
+                                                                     .Replace("[REDIRECT]",urlApi);
             List<string> to = new List<string>();
             to.Add(user.email);
-            return sendEmail(subject,body,HtmlBody.isNotHtml,to);
+
+            
+
+            return sendEmail(subject,body,HtmlBody.isHtml,to);
         }
 
         public static bool sendEmail(string subject, string body, HtmlBody isHtml, List<string> to)
@@ -78,6 +86,52 @@ namespace AssistanceOnlineUtilities
                 googleSmpt.Send(mail);
 
                 return true;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        public static string userToken()
+        {
+            return Guid.NewGuid().ToString();
+        }
+
+        public static bool activeUserToken(string token)
+        {
+            try
+            {
+                using (var context = new AssistanceOnlineContext())
+                {
+                  return   context.User.Where(c => c.keyToken == token).Any();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public static LoginStatus login(string email,string password)
+        {
+            try
+            {
+                LoginStatus status = LoginStatus.OK;
+                switch (UserBLL.verifyUserLogin(email,password))
+                {
+                    case 2:
+                        status = LoginStatus.ErrorPassword;
+                        break;
+                    case 3:
+                        status = LoginStatus.ErrorEmail;
+                        break;
+                }
+
+                return status;
+
             }
             catch (Exception ex)
             {

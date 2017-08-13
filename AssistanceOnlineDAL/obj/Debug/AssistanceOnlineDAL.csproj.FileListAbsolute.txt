@@ -10,3 +10,15 @@ C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnlineDAL\obj\Debug\AssistanceOnlineDAL.csprojResolveAssemblyReference.cache
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnlineDAL\obj\Debug\AssistanceOnlineDAL.dll
 C:\Users\Gerardo Monreal\Documents\Visual Studio 2017\Projects\AssistanceOnline\AssistanceOnlineDAL\obj\Debug\AssistanceOnlineDAL.pdb
+C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineDAL\bin\Debug\AssistanceOnlineDAL.dll.config
+C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineDAL\bin\Debug\AssistanceOnlineDAL.dll
+C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineDAL\bin\Debug\AssistanceOnlineDAL.pdb
+C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineDAL\bin\Debug\EntityFramework.dll
+C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineDAL\bin\Debug\EntityFramework.xml
+C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineDAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineDAL\bin\Debug\es\EntityFramework.resources.dll
+C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineDAL\bin\Debug\es\EntityFramework.SqlServer.resources.dll
+C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineDAL\obj\Debug\AssistanceOnlineDAL.csprojResolveAssemblyReference.cache
+C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineDAL\obj\Debug\AssistanceOnlineDAL.dll
+C:\Users\Gerardo Monreal\Documents\GitHub\AssistanceOnline\AssistanceOnlineDAL\obj\Debug\AssistanceOnlineDAL.pdb

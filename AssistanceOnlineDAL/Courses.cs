@@ -12,27 +12,27 @@ namespace AssistanceOnlineDAL
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Courses
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Courses()
         {
-            this.Courses = new HashSet<Courses>();
+            this.Assistance = new HashSet<Assistance>();
             this.Subscriptions = new HashSet<Subscriptions>();
         }
     
-        public int idUser { get; set; }
+        public int idCourse { get; set; }
         public string name { get; set; }
-        public string lastName { get; set; }
-        public string email { get; set; }
-        public string password { get; set; }
-        public bool active { get; set; }
+        public string description { get; set; }
+        public string tokenKey { get; set; }
         public System.DateTime creationDate { get; set; }
         public System.DateTime modificationDate { get; set; }
-        public string keyToken { get; set; }
+        public int idUser { get; set; }
+        public bool active { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Courses> Courses { get; set; }
+        public virtual ICollection<Assistance> Assistance { get; set; }
+        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Subscriptions> Subscriptions { get; set; }
     }

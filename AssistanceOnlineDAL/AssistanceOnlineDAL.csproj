@@ -64,6 +64,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AssistanceOnline.edmx</DependentUpon>
     </Compile>
+    <Compile Include="HtmlTemplate.cs">
+      <DependentUpon>AssistanceOnline.tt</DependentUpon>
+    </Compile>
     <Compile Include="Key.cs">
       <DependentUpon>AssistanceOnline.tt</DependentUpon>
     </Compile>

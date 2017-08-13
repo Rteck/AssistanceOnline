@@ -202,6 +202,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\tokenVerifyController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -284,6 +285,7 @@
     <Content Include="Views\Shared\_LoginAssistanceOnline.cshtml" />
     <Content Include="Views\Login\createAccount.cshtml" />
     <Content Include="Views\Login\forgotPassword.cshtml" />
+    <Content Include="Views\Login\errorLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

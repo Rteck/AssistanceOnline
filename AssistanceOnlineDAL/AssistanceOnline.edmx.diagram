@@ -5,8 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="9a1acdca83a54af3b4f7b72ce5355f07" Name="Diagram1">
+        <EntityTypeShape EntityType="AssistanceOnlineModel.Key" Width="1.5" PointX="13.125" PointY="4.125" />
+        <EntityTypeShape EntityType="AssistanceOnlineModel.HtmlTemplate" Width="2.125" PointX="13.125" PointY="1.25" />
         <EntityTypeShape EntityType="AssistanceOnlineModel.User" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="AssistanceOnlineModel.Key" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="AssistanceOnlineModel.Assistance" Width="1.5" PointX="3.625" PointY="7.875" />
+        <EntityTypeShape EntityType="AssistanceOnlineModel.Courses" Width="1.5" PointX="1" PointY="4.625" />
+        <EntityTypeShape EntityType="AssistanceOnlineModel.SubscriptionAssistance" Width="2.125" PointX="7.5" PointY="4.5" />
+        <EntityTypeShape EntityType="AssistanceOnlineModel.Subscriptions" Width="1.5" PointX="4.375" PointY="1.25" />
+        <AssociationConnector Association="AssistanceOnlineModel.FK_Assistance_Courses" />
+        <AssociationConnector Association="AssistanceOnlineModel.FK_SubscriptionA_Assistance" />
+        <AssociationConnector Association="AssistanceOnlineModel.FK_Courses_User" />
+        <AssociationConnector Association="AssistanceOnlineModel.FK_Subsciptions_Courses" />
+        <AssociationConnector Association="AssistanceOnlineModel.FK_SubscriptionA_Subscription" />
+        <AssociationConnector Association="AssistanceOnlineModel.FK_Subscriptions_User" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

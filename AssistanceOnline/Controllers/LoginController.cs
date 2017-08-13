@@ -21,17 +21,31 @@ namespace AssistanceOnline.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login()
+        public ActionResult Login([Bind(Include = "email,password")] User user)
         {
             var response = Request["g-recaptcha-response"];
            
             if (Utilities.verifyReCapchat(response))
             {
-                return RedirectToAction("Index", "Users");
+                if (Utilities.login(user.email, user.password) == LoginStatus.OK)
+                {
+                    Session["user"] = UserBLL.findUserByEmail(user.email);
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    return RedirectToAction("errorLogin", "Login");
+                }
             }
-
             return View("Index");
-            
+        }
+
+
+        [HttpGet]
+        public ActionResult errorLogin(string message)
+        {
+            ViewBag.message = message;
+            return View();
         }
 
         [HttpGet]
@@ -51,6 +65,7 @@ namespace AssistanceOnline.Controllers
                 user.creationDate       =   DateTime.UtcNow;
                 user.modificationDate   =   DateTime.UtcNow;
                 user.active             =   false;
+                user.keyToken           =   Utilities.userToken();
 
                 if (UserBLL.AddUser(user))
                 {

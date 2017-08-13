@@ -25,7 +25,12 @@ namespace AssistanceOnlineDAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Key> Key { get; set; }
+        public virtual DbSet<HtmlTemplate> HtmlTemplate { get; set; }
+        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Assistance> Assistance { get; set; }
+        public virtual DbSet<Courses> Courses { get; set; }
+        public virtual DbSet<SubscriptionAssistance> SubscriptionAssistance { get; set; }
+        public virtual DbSet<Subscriptions> Subscriptions { get; set; }
     }
 }
