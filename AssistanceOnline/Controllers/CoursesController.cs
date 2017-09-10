@@ -145,5 +145,33 @@ namespace AssistanceOnline.Controllers
             }
             base.Dispose(disposing);
         }
+        [HttpGet]
+        public ActionResult TableCourses()
+        {
+            var user = Session["user"] as User;
+            return PartialView(CoursesBLL.findCoursesbyUser(user.idUser));
+        }
+
+        [HttpGet]
+        public ActionResult modalCreate()
+        {
+            Courses course = new Courses();
+            return PartialView(course);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public JsonResult  CreateForm([Bind(Include = "idCourse,name,description,tokenKey")] Courses courses)
+        {
+            if (ModelState.IsValid)
+            {
+                var idUser = (Session["user"] as User).idUser;
+                courses.idUser = idUser;
+                CoursesBLL.createCourse(courses);
+                
+            }
+
+            return Json(true);
+        }
     }
 }

@@ -1,0 +1,17 @@
+﻿@model IEnumerable<AssistanceOnlineDAL.Courses>
+
+@foreach (var item in Model)
+{
+    <div class="row" style="padding:1% !important">
+        <div class="card">
+            <div style="text-align:center"><img src="~/Images/class-material.png" class="img-circle" alt="Avatar" style="width:100px;height:100px"></div>
+            
+            <div class="container" style="text-align:center">
+                <h3><b>@item.name</b></h3>
+                <p>Interior Designer</p>
+            </div>
+        </div>
+    </div>
+   
+
+}

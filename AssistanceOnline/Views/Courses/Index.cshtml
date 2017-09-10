@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<AssistanceOnlineDAL.Courses>
 
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -12,7 +13,7 @@
         <h2>My courses</h2>
     </div>
     <div class="col-md-6" style="text-align:right">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        <button type="button" class="btn btn-primary"  onclick="modalCourse()">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new course
         </button>
     </div>
@@ -22,42 +23,109 @@
 
 <div class="row">
     <div class="col-md-12">
-        @foreach (var item in Model)
-        {
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingTwo">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#@item.idCourse" aria-expanded="false" aria-controls="collapseTwo">
-                                        @item.name
-                                    </a>
-                                </h4>
-                            </div>
-                            <div class="col-md-6" style="text-align:right">
-                                @Html.ActionLink("Details", "Details", new { id = item.idCourse })
-                            </div>
-                        </div>
-
-                    </div>
-                    <div id="@item.idCourse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                        <div class="panel-body">
-                            <form class="form-inline">
-                                <div class="form-group mx-sm-3">
-                                    <label for="nasist" class="sr-only">Numero de Asistencias</label>
-                                    <input type="number" class="form-control" id="nasist" placeholder="" min="1" value="1">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Generar Asistencias</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        }
+        <div id="dvCourses"></div>
     </div>
 </div>
-@Html.Partial("modalCreate", new AssistanceOnlineDAL.Courses())
+
+@using (Ajax.BeginForm("CreateForm", "Courses", new AjaxOptions() { HttpMethod = "POST", LoadingElementId = "ajaxLoader", OnSuccess = "succesAddCourse", OnBegin = "beginAddCourse", OnFailure = "failAddCourse" }))
+{
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h2 class="modal-title" id="myModalLabel">New Course</h2>
+            </div>
+            <div class="modal-body">
+               
+                    @Html.AntiForgeryToken()
+
+                   <div id="modalContent"></div>
+
+                    
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</div>
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        courses();
+    });
+
+    function courses() {
+        $('#ajaxLoader').show();
+        $.ajax({
+            url: 'Courses/TableCourses', //se manda llamar el archivo php que se usara para comunicar con el servidor
+            type: 'GET',// tipo de dato que recibira el archivo php
+            data: {
+
+            }, // variables que se mandaran al php
+            success: function (data) // funcion que es llamada cuando se realizo con exito el archivo php
+            {
+                $('#dvCourses').html(data);
+                $('#ajaxLoader').hide();
+            },
+            error: function () {
+                alert("Controller"); // el error estaria en el archivo php
+                $('#ajaxLoader').hide();
+
+            }
+        });
+    }
+
+    function modalCourse() {
+        $.ajax({
+            url: 'Courses/modalCreate', //se manda llamar el archivo php que se usara para comunicar con el servidor
+            type: 'GET',// tipo de dato que recibira el archivo php
+            data: {
+
+            }, // variables que se mandaran al php
+            success: function (data) // funcion que es llamada cuando se realizo con exito el archivo php
+            {
+                $('#modalContent').html(data);
+                $('#myModal').modal('show');
+            },
+            error: function () {
+                alert("Controller"); // el error estaria en el archivo php
+                $('#ajaxLoader').hide();
+
+            }
+        });
+        
+
+    }
+
+    function succesAddCourse() {
+        courses();
+    }
+
+    function beginAddCourse() {
+        $('#myModal').modal('hide');
+    }
+
+    function failAddCourse() {
+        alert("Fallo");
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
